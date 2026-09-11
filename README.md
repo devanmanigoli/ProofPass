@@ -1,16 +1,70 @@
-# React + Vite
+# ProofPass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Blockchain-Based Certificate Verification System
 
-Currently, two official plugins are available:
+ProofPass is a blockchain-based certificate verification system that helps verify the authenticity of certificates using the Avalanche Fuji blockchain.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Problem
 
-## React Compiler
+Fake or tampered certificates can be difficult to verify using traditional methods.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Solution
 
-## Expanding the ESLint configuration
+ProofPass stores a cryptographic fingerprint of a certificate on the blockchain. Each certificate receives a unique Certificate ID that can be used to verify its authenticity.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Issue certificates
+- Generate unique Certificate IDs
+- Store certificate hashes on blockchain
+- Verify certificates using Certificate ID
+- Display certificate issuer
+- Detect certificate tampering through cryptographic hashing
+
+## Technology Stack
+
+- Solidity
+- Avalanche Fuji C-Chain
+- Remix IDE
+- React
+- Vite
+- ethers.js
+- MetaMask
+
+## Smart Contract
+
+**Network:** Avalanche Fuji C-Chain
+
+**Contract Address:**
+
+`0x91Fc2d2582793499256CF32EC7D0B2aB0aBBeD3d`
+
+## Test Certificate
+
+**Certificate ID:** 1
+
+**Student:** Devanmani
+
+**Certificate:** Avalanche Blockchain Workshop
+
+## How It Works
+
+1. An organization issues a certificate.
+2. The certificate receives a unique ID.
+3. A cryptographic hash is stored on Avalanche.
+4. A user enters the Certificate ID.
+5. ProofPass retrieves the certificate information directly from the blockchain.
+6. The user can verify the certificate and its issuer.
+
+## Project Structure
+
+```text
+ProofPass/
+├── contracts/
+│   └── ProofPass.sol
+│
+└── proofpass-ui/
+    ├── src/
+    ├── public/
+    ├── package.json
+    └── ...
